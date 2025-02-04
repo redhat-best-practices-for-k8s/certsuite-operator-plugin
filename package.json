@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aabughosh/cnf-plugin"
+    "url": "https://github.com/redhat-best-practices-for-k8s/certsuite-operator-plugin"
   },
   "scripts": {
     "clean": "rm -rf dist",
@@ -71,10 +71,10 @@
   "consolePlugin": {
     "name": "certsuite-operator-plugin",
     "version": "0.0.1",
-    "displayName": "CNF certification test plugin",
+    "displayName": "Certification test plugin",
     "description": "This plugin adds Red Hat best practices for Kubernetes tests suites results to the OpenShift web console.",
     "exposedModules": {
-      "CnfCertsuiteRunPage": "./components/CnfCertsuiteRunPage",
+      "CertsuiteRunPage": "./components/CertsuiteRunPage",
       "ResultsPage": "./components/ResultsPage"
     },
     "dependencies": {

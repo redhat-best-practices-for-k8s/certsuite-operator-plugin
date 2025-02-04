@@ -2,10 +2,10 @@
   {
     "type": "console.navigation/section",
     "properties": {
-      "id": "cnf-cert-section",
+      "id": "certsuite-section",
       "insertAfter": "builds",
       "perspective": "admin",
-      "name": "Cnf Certification Suites"
+      "name": "Certification Suites"
     }
   },
   {
@@ -14,25 +14,25 @@
         "data-quickstart-id": "qs-nav-templates",
         "data-test-id": "templates-nav-item"
       },
-      "id": "cnfCertificationSuiteRuns",
+      "id": "certsuiteRuns",
       "model": {
-        "group": "cnf-certifications.redhat.com",
-        "kind": "CnfCertificationSuiteRun",
+        "group": "best-practices-for-k8s.openshift.io",
+        "kind": "CertsuiteRun",
         "version": "v1alpha1"
       },
-      "name": "%plugin__certsuite-operator-plugin~Cnf Certification Suite CRs%",
-      "section": "cnf-cert-section"
+      "name": "%plugin__certsuite-operator-plugin~Certification Suite CRs%",
+      "section": "certsuite-section"
     },
     "type": "console.navigation/resource-ns"
   },
   {
     "properties": {
       "component": {
-        "$codeRef": "CnfCertsuiteRunPage"
+        "$codeRef": "CertsuiteRunPage"
       },
       "model": {
-        "group": "cnf-certifications.redhat.com",
-        "kind": "CnfCertificationSuiteRun",
+        "group": "best-practices-for-k8s.openshift.io",
+        "kind": "CertsuiteRun",
         "version": "v1alpha1"
       }
     },
@@ -42,8 +42,8 @@
     "type": "console.tab/horizontalNav",
     "properties": {
       "model": {
-        "group": "cnf-certifications.redhat.com",
-        "kind": "CnfCertificationSuiteRun",
+        "group": "best-practices-for-k8s.openshift.io",
+        "kind": "CertsuiteRun",
         "version": "v1alpha1"
       },
       "page": {
@@ -65,7 +65,7 @@
         "version": "v1"
       },
       "name": "%plugin__certsuite-operator-plugin~Secrets%",
-      "section": "cnf-cert-section"
+      "section": "certsuite-section"
     },
     "type": "console.navigation/resource-ns"
   }
@@ -82,7 +82,7 @@
         "version": "v1"
       },
       "name": "%plugin__certsuite-operator-plugin~ConfigMap%",
-      "section": "cnf-cert-section"
+      "section": "certsuite-section"
     },
     "type": "console.navigation/resource-ns"
   }

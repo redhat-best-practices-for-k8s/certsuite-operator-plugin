@@ -1,29 +1,29 @@
-# CNF Certification Suite Operator's Console Plugin
+# Certification Suite Operator's Console Plugin
 
 [![red hat](https://img.shields.io/badge/red%20hat---?color=gray&logo=redhat&logoColor=red&style=flat)](https://www.redhat.com)
 [![openshift](https://img.shields.io/badge/openshift---?color=gray&logo=redhatopenshift&logoColor=red&style=flat)](https://www.redhat.com/en/technologies/cloud-computing/openshift)
 
 ## Description
 
-The `CNF certsuite plugin` is an
+The `Certsuite plugin` is an
 [openshift dynamic console plugin](https://github.com/openshift/console/tree/master/frontend/packages/console-dynamic-plugin-sdk)
 extending the [OpenShift UI](https://github.com/openshift/console)
-for the CNF Certification Suite Operator.
+for the Certification Suite Operator.
 
 This console plugin allows the possibility to run the
-[CNF certification suites](https://github.com/test-network-function/cnf-certification-test)
+[Certification suites](https://github.com/redhat-best-practices-for-k8s/certsuite)
 and review their results using the openshift console.
 
 ## Getting started
 
-In order to extend the openshift console with the `CNF certsuite plugin`,
+In order to extend the openshift console with the `certsuite plugin`,
 you'll need to install the
-[CNF certification suite operator](https://github.com/test-network-function/cnf-certsuite-operator)
+[certification suite operator](https://github.com/redhat-best-practices-for-k8s/certsuite-operator)
 on your cluster.
 
 ## Enable plugin
 
-After installing the `CNF certification operator`, you might need to enable the plugin.
+After installing the `Certification operator`, you might need to enable the plugin.
 
 ### Option 1: Operator was installed using OLM subscription
 
@@ -50,19 +50,19 @@ you should see a new tab added to the navigation bar:
 <!-- markdownlint-enable-next-line no-inline-html -->
 
 You can add the required resources detailed
-[here](https://github.com/test-network-function/cnf-certsuite-operator?tab=readme-ov-file#how-to-customize-the-cnf-certification-suite-run),
+[here](https://github.com/redhat-best-practices-for-k8s/certsuite-operator?tab=readme-ov-file#how-to-customize-the-certification-suite-run),
 by navigating to the corresponding tabs and using the `create` option.
 
-The CNF certification test results will appear under the
-`CNF certification Suite CR's` corresponding to the created
-cnf certification run CR name.
+The certification test results will appear under the
+`Certification Suite CR's` corresponding to the created
+certification run CR name.
 
 See example:
 
-![cnfCertificationSuiteRun-CR-list](doc/cnfCertificationSuiteRun-CR-list.png)
+![CertificationSuiteRun-CR-list](doc/cnfCertificationSuiteRun-CR-list.png)
 
-Under the `Results` tab you can find the CNF certification suites results.
+Under the `Results` tab you can find the certification suites results.
 
 See example:
 
-![cnfCertificationSuiteRun-results](doc/cnfCertificationSuiteRun-results.png)
+![CertificationSuiteRun-results](doc/cnfCertificationSuiteRun-results.png)

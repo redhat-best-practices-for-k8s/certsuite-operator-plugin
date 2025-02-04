@@ -11,7 +11,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { ProgressBar } from './ProgressBar'; // Import the ProgressBar component
 
-interface CnfCertificationSuiteRun extends K8sResourceCommon {
+interface CertSuiteRun extends K8sResourceCommon {
   status: {
     report: {
       results: Results[];
@@ -34,7 +34,7 @@ interface Results {
   reason?: string;
 }
 
-const columns: TableColumn<CnfCertificationSuiteRun>[] = [
+const columns: TableColumn<CertSuiteRun>[] = [
   {
     title: 'Test Case Name',
     id: 'testCaseName',
@@ -49,7 +49,7 @@ const columns: TableColumn<CnfCertificationSuiteRun>[] = [
   },
 ];
 
-const CnfCertificationSuiteRunRow: React.FC<RowProps<Results>> = ({ obj, activeColumnIDs }) => {
+const CertSuiteRunRow: React.FC<RowProps<Results>> = ({ obj, activeColumnIDs }) => {
   return (
     <>
       <TableData id={columns[0].id} activeColumnIDs={activeColumnIDs}>
@@ -65,7 +65,7 @@ const CnfCertificationSuiteRunRow: React.FC<RowProps<Results>> = ({ obj, activeC
   );
 };
 
-const CnfCertificationSuiteRunTable: React.FC<{ data: Results[]; loaded: boolean; loadError: any }> = ({
+const CertSuiteRunTable: React.FC<{ data: Results[]; loaded: boolean; loadError: any }> = ({
   data,
   loaded,
   loadError,
@@ -76,11 +76,11 @@ const CnfCertificationSuiteRunTable: React.FC<{ data: Results[]; loaded: boolean
     loaded={loaded}
     loadError={loadError}
     columns={columns}
-    Row={CnfCertificationSuiteRunRow}
+    Row={CertSuiteRunRow}
   />
 );
 
-const ResultsPage: React.FC<{ obj: CnfCertificationSuiteRun }> = ({ obj }) => {
+const ResultsPage: React.FC<{ obj: CertSuiteRun }> = ({ obj }) => {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = React.useState<string>('all'); // Default to showing all results
 
@@ -119,12 +119,12 @@ const ResultsPage: React.FC<{ obj: CnfCertificationSuiteRun }> = ({ obj }) => {
         onFilterChange={handleFilterChange}
       />
 
-      <ListPageHeader title={t('Cnf Certification Suite Run Results')} />
+      <ListPageHeader title={t('Certification Suite Run Results')} />
       <ListPageBody>
       {filteredResults.length === 0 ? (
           <div className="no-results">{t('No results found for the selected filter')}</div>
         ) : (
-          <CnfCertificationSuiteRunTable data={filteredResults} loaded loadError={null} />
+          <CertSuiteRunTable data={filteredResults} loaded loadError={null} />
         )}
       </ListPageBody>
     </>
