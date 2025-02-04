@@ -1,8 +1,8 @@
 // src/plugin.ts
 import ResultsPage from './ResultsPage';
-import CnfCertsuiteRunPage from './CnfCertsuiteRunPage';
+import CertsuiteRunPage from './CertsuiteRunPage';
 
 export const plugin = {
-  cnfCertsuiteRunPage: CnfCertsuiteRunPage,
+  CertsuiteRunPage: CertsuiteRunPage,
   resultsPage: ResultsPage,
 };

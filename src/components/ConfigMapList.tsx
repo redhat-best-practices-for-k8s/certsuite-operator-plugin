@@ -77,7 +77,7 @@ const ListConfigMap = ({namespace,name}) => {
 
   return (
     <>
-      <ListPageHeader title={t('plugin__certsuite-operator-plugin~CnfCertificationSuiteRun ConfigMap List')}>
+      <ListPageHeader title={t('plugin__certsuite-operator-plugin~CertSuiteRun ConfigMap List')}>
       <ListPageCreate groupVersionKind={{version: 'v1', kind: 'ConfigMap' }}>
           {t('plugin__certsuite-operator-plugin~Create a ConfigMap')}
         </ListPageCreate> 

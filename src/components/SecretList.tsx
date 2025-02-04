@@ -76,7 +76,7 @@ const ListSecret = ({namespace,name}) => {
 
   return (
     <>
-      <ListPageHeader title={t('plugin__certsuite-operator-plugin~CnfCertificationSuiteRun Secrets List')}>
+      <ListPageHeader title={t('plugin__certsuite-operator-plugin~CertSuiteRun Secrets List')}>
       <ListPageCreate groupVersionKind={{version: 'v1', kind: 'Secret' }}>
           {t('plugin__certsuite-operator-plugin~Create a Secret')}
         </ListPageCreate> 

@@ -14,14 +14,14 @@ import {
 } from '@openshift-console/dynamic-plugin-sdk';
 import { useTranslation } from 'react-i18next';
 
-type CnfCertificationSuiteRunTableProps = {
+type CertsuiteRunTableProps = {
   data: K8sResourceCommon[];
   unfilteredData: K8sResourceCommon[];
   loaded: boolean;
   loadError: any;
 };
 
-const CnfCertificationSuiteRunTable: React.FC<CnfCertificationSuiteRunTableProps> = ({ data, unfilteredData, loaded, loadError }) => {
+const CertsuiteRunTable: React.FC<CertsuiteRunTableProps> = ({ data, unfilteredData, loaded, loadError }) => {
   const { t } = useTranslation();
 
   const columns: TableColumn<K8sResourceCommon>[] = [
@@ -35,11 +35,11 @@ const CnfCertificationSuiteRunTable: React.FC<CnfCertificationSuiteRunTableProps
     },
   ];
 
-  const CnfCertificationSuiteRunRow: React.FC<RowProps<K8sResourceCommon>> = ({ obj, activeColumnIDs }) => {
+  const CertsuiteRunRow: React.FC<RowProps<K8sResourceCommon>> = ({ obj, activeColumnIDs }) => {
     return (
       <>
         <TableData id={columns[0].id} activeColumnIDs={activeColumnIDs}>
-          <ResourceLink kind="cnf-certifications.redhat.com~v1alpha1~CnfCertificationSuiteRun" name={obj.metadata.name} namespace={obj.metadata.namespace}  />
+          <ResourceLink kind="best-practices-for-k8s.openshift.io~v1alpha1~CertsuiteRun" name={obj.metadata.name} namespace={obj.metadata.namespace}  />
         </TableData>
         <TableData id={columns[1].id} activeColumnIDs={activeColumnIDs}>
           <ResourceLink kind="Namespace" name={obj.metadata.namespace} />
@@ -55,7 +55,7 @@ const CnfCertificationSuiteRunTable: React.FC<CnfCertificationSuiteRunTableProps
       loaded={loaded}
       loadError={loadError}
       columns={columns}
-      Row={CnfCertificationSuiteRunRow}
+      Row={CertsuiteRunRow}
     />
   );
 };
@@ -65,9 +65,9 @@ const ListPage = ({namespace,name}) => {
 
   const [resources, loaded, loadError] = useK8sWatchResource<K8sResourceCommon[]>({
     groupVersionKind: {
-      group: 'cnf-certifications.redhat.com', 
+      group: 'best-practices-for-k8s.openshift.io', 
       version: 'v1alpha1',                         
-      kind: 'CnfCertificationSuiteRun',      
+      kind: 'CertsuiteRun',      
     },
     namespace,
     name,
@@ -77,16 +77,16 @@ const ListPage = ({namespace,name}) => {
 
   return (
     <>
-      <ListPageHeader title={t('plugin__certsuite-operator-plugin~CnfCertificationSuiteRun CRs List')}>
+      <ListPageHeader title={t('plugin__certsuite-operator-plugin~CertsuiteRun CRs List')}>
    
       </ListPageHeader>
       <ListPageHeader title={t('')}>
-      <ListPageCreate groupVersionKind={{ group: 'cnf-certifications.redhat.com', version: 'v1alpha1', kind: 'CnfCertificationSuiteRun' }}>
-          {t('plugin__certsuite-operator-plugin~Create a CnfCertificationSuiteRun CR')}
+      <ListPageCreate groupVersionKind={{ group: 'best-practices-for-k8s.openshift.io', version: 'v1alpha1', kind: 'CertsuiteRun' }}>
+          {t('plugin__certsuite-operator-plugin~Create a CertsuiteRun CR')}
         </ListPageCreate>
       </ListPageHeader>
       <ListPageBody>
-        <CnfCertificationSuiteRunTable
+        <CertsuiteRunTable
           data={resources}
           unfilteredData={resources}
           loaded={loaded}
@@ -94,8 +94,8 @@ const ListPage = ({namespace,name}) => {
         />
       </ListPageBody>
       <ListPageBody>
-        <p>{t('plugin__certsuite-operator-plugin~Sample ResourceIcon for CnfCertificationSuiteRun')}</p>
-        <ResourceIcon kind="CnfCertificationSuiteRun" />
+        <p>{t('plugin__certsuite-operator-plugin~Sample ResourceIcon for CertsuiteRun')}</p>
+        <ResourceIcon kind="CertsuiteRun" />
       </ListPageBody>
     </>
   );
